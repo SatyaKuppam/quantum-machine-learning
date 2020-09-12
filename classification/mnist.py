@@ -46,12 +46,22 @@ class MNISTData:
         return tfq.convert_to_tensor(X_train), tfq.convert_to_tensor(X_test), y_train, y_test
     
     # returns tensorflow objects of raw mnist data
-    def get_three_five_test_train_split(self):
-        labels_three = self.labels[self.labels==3] - 2
-        labels_five = self.labels[self.labels==5] - 6
-        
-        labels = np.hstack((labels_three, labels_five))
+    # returns a one hot representation (0,1) for three and (1,0) for five
+    def get_three_five_test_train_split(self, one_hot=False):
         digits = np.vstack((self.data[self.labels==3], self.data[self.labels==5]))
-        X_train, X_test, y_train, y_test = train_test_split(digits, labels, test_size=0.1, random_state=self.seed)
-        return tf.convert_to_tensor(X_train), tf.convert_to_tensor(X_test), y_train, y_test
+        sc = StandardScaler()
+        digits = sc.fit_transform(digits)
         
+        if one_hot:
+            labels_three = self.labels[self.labels==3] - 3
+            labels_five = self.labels[self.labels==5] - 4
+            labels = np.hstack((labels_three, labels_five))
+        
+            ones = np.eye(2)
+            labels = ones[labels]
+        else:
+            labels_three = self.labels[self.labels==3] - 4
+            labels_five = self.labels[self.labels==5] - 4
+            labels = np.hstack((labels_three, labels_five))
+            
+        return train_test_split(digits, labels, test_size=0.1, random_state=self.seed)
