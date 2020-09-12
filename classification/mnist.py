@@ -1,6 +1,7 @@
 from sklearn.decomposition import PCA
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 import numpy as np
 import tensorflow_quantum as tfq
