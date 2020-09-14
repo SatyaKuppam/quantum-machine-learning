@@ -21,3 +21,4 @@ tensorflow-quantum, scipy, sklearn, keras
   * Quantum Boltzmann machines
   * Quantum Circuit Born machine
   * Quantum Neural Networks to simulate many-body physics by Gardas et al.
+  * Generative models from [Bendetti's PhD Thesis](https://discovery.ucl.ac.uk/id/eprint/10086495/1/Benedetti_phd_thesis_ecopy.pdf)
