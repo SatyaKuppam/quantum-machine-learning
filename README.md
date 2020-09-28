@@ -10,7 +10,7 @@ Currently contains:
 
 
 ### Libraries used:
-tensorflow-quantum, scipy, sklearn, keras
+tensorflow-quantum, scipy, sklearn, keras, cirq, qiskit
 
 ### To-Do:
 
