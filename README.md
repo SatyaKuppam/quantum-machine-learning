@@ -9,7 +9,7 @@ Currently contains:
    * [Quantum Kitchen Sinks by Wilson et al.](https://github.com/SatyaKuppam/quantum-machine-learning/blob/master/classification/%5BWilson%20et%20al.%5D%20Quantum%20Kitchen%20Sinks.ipynb): Contains a quantum kitchen sinks example for binary classification on MNIST.
 
 ### Gradients:
-* Example for finding gradients using the [parameter shift method](https://github.com/SatyaKuppam/quantum-machine-learning/blob/master/parameter_shift/parameter_shift_gradient_descent.ipynb) to find the parameters of a PQC that minimize a cost functino.
+* A parameterised quantum circuit for learning an arbitrary unknown state. Trained using gradient descent with the [parameter shift method](https://github.com/SatyaKuppam/quantum-machine-learning/blob/master/parameter_shift/parameter_shift_gradient_descent.ipynb) to find the parameters for the PQC.
 
 ### Libraries used:
 tensorflow-quantum, scipy, sklearn, keras, cirq, qiskit
